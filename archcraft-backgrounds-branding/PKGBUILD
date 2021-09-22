@@ -1,0 +1,25 @@
+# Maintainer: Aditya Shakya <adi1090x@gmail.com>
+
+pkgname=archcraft-backgrounds-branding
+pkgver=1.0
+pkgrel=1
+pkgdesc="Branding wallpapers for Archcraft"
+url="https://github.com/archcraft-os/archcraft-wallpapers"
+arch=('any')
+license=('GPL3')
+makedepends=()
+depends=()
+conflicts=()
+groups=(archcraft-wallpapers)
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+
+prepare() {
+	cp -af ../files/. ${srcdir}
+}
+
+package() {
+	local _bgdir=${pkgdir}/usr/share/backgrounds/archcraft
+	mkdir -p "$_bgdir"
+	cp -r ${srcdir}/* "$_bgdir"
+}

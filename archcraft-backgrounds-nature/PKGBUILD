@@ -1,0 +1,24 @@
+# Maintainer: Aditya Shakya <adi1090x@gmail.com>
+
+pkgname=archcraft-backgrounds-nature
+pkgver=1.0
+pkgrel=1
+pkgdesc="Nature wallpapers for Archcraft"
+url="https://github.com/archcraft-os/archcraft-wallpapers"
+arch=('any')
+license=('GPL3')
+makedepends=()
+depends=()
+conflicts=()
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+
+prepare() {
+	cp -af ../files/. ${srcdir}
+}
+
+package() {
+	local _bgdir=${pkgdir}/usr/share/backgrounds/nature
+	mkdir -p "$_bgdir"
+	cp -r ${srcdir}/* "$_bgdir"
+}
