@@ -2,7 +2,7 @@
 
 pkgname=archcraft-backgrounds-nature
 pkgver=1.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Nature wallpapers for Archcraft"
 url="https://github.com/archcraft-os/archcraft-wallpapers"
 arch=('any')
