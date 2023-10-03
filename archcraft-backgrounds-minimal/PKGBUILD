@@ -1,0 +1,20 @@
+# Maintainer: Aditya Shakya <adi1090x@gmail.com>
+
+pkgname=archcraft-backgrounds-minimal
+pkgver=1.0
+pkgrel=6
+pkgdesc="Minimal wallpapers for Archcraft"
+arch=('any')
+url="https://github.com/archcraft-os/archcraft-wallpapers"
+license=('GPL3')
+options=(!strip !emptydirs)
+
+prepare() {
+	cp -af ../files/. "$srcdir"
+}
+
+package() {
+	local _bgdir="$pkgdir"/usr/share/backgrounds/minimal
+	mkdir -p "$_bgdir"
+	cp -r "$srcdir"/* "$_bgdir"
+}
